@@ -25,16 +25,32 @@ This program provides a basic framework for managing products, inventory, and tr
         Methods:
             process_transaction(self, products): Processes a transaction, updating inventory and generating a transaction record.
 
+    store == Store()
+    this portion of the code initializes a new store, creates several products, and adds them to the store's inventory. These products are now available for transactions within this store management system.
+
+    CLI Boolean type for interacting witht the store:
+    #Example 
+    while True:
+    print("\nOptions:")
+    print("1. View Product Info")
+    print("2. Process Transaction")
+    print("3. Exit")
+    choice = input("Enter your choice: ")
+    Users can select options 1, 2, or 3, with the system providing appropriate responses based on the chosen action.
+
+
 Sample Usage:
 
 The code provides a sample usage of the classes and a command-line interface to interact with the store. It allows you to:
 
-    View product information by providing the product ID.
-    Process a transaction by selecting products and quantities, and it prints out the transaction details.
-    Exit the application.
+![Screenshot (164)](https://github.com/Enigma-design/IMS-for-a-Store/assets/53714668/895d4dfa-2f4f-4bb4-bbee-3a6d290d5088)
 
 If an invalid choice is entered in the CLI, it will print "Sorry, I'm not sure what you are looking for."
 
-        Handles invalid user choices with a message: "Sorry, I'm not sure what you are looking for."
+![Screenshot (165)](https://github.com/Enigma-design/IMS-for-a-Store/assets/53714668/06ddc8bc-195e-40a5-8999-37dfb47d1a80)
+
+
+    Handles invalid user choices with a message: "Sorry, I'm not sure what you are looking for."
+
 
 Note: This system does not handle negative quantities
