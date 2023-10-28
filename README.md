@@ -25,19 +25,16 @@ This program provides a basic framework for managing products, inventory, and tr
         Methods:
             process_transaction(self, products): Processes a transaction, updating inventory and generating a transaction record.
 
-Usage:
+Sample Usage:
 
-    Initialization:
-        Creates a store instance.
-        Adds products (e.g., Water, Soda, Tea, Chips, Gummy bears) to the inventory.
+The code provides a sample usage of the classes and a command-line interface to interact with the store. It allows you to:
 
-    CLI (Command-Line Interface):
+    View product information by providing the product ID.
+    Process a transaction by selecting products and quantities, and it prints out the transaction details.
+    Exit the application.
 
-        Offers three options:
-            View Product Info (Choice 1): Allows users to view product information by entering a product ID. If the ID is invalid, it prints "Im sorry, we do not have that here."
-            Process Transaction (Choice 2): Enables users to add products to a transaction until they enter 0. It calculates the total amount and generates a transaction record.
-            Exit (Choice 3): Exits the program.
+If an invalid choice is entered in the CLI, it will print "Sorry, I'm not sure what you are looking for."
 
         Handles invalid user choices with a message: "Sorry, I'm not sure what you are looking for."
 
-Note: This system does not handle edge cases, such as negative quantities or incorrect user inputs. It provides a basic structure that can be extended for more complex store management scenarios.
+Note: This system does not handle negative quantities
