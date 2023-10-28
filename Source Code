@@ -1,90 +1,156 @@
-#Retail Store/Convience Store
-class Product:
+ #Retail Store/Convience Store
+ class Product:
+ class Product:
     def __init__(self, product_id, name, category, price, quantity_in_stock):
-        self.product_id = product_id
-        self.name = name
-        self.category = category
-        self.price = price
-        self.quantity_in_stock = quantity_in_stock
-
+    def __init__(self, product_id, name, category, price, quantity_in_stock): #This is generating variables that will represent products in a store
+         self.product_id = product_id
+         self.product_id = product_id
+         self.name = name
+         self.name = name
+         self.category = category
+         self.category = category
+         self.price = price
+         self.price = price
+         self.quantity_in_stock = quantity_in_stock
+         self.quantity_in_stock = quantity_in_stock
+ 
+ 
 class Inventory:
-    def __init__(self):
-        self.products = {}
+#Attributes (self.product, .name, .category, .price, .quantity_in_stock)
+class Inventory:        #Manages Inventory
 
+#Methods ( add_product(self, product), update_stock(self, product_id, quantity), get_product_info(self, product_id)
+     def __init__(self):
+     def __init__(self):
+         self.products = {}
+         self.products = {}
+ 
+ 
     def add_product(self, product):
-        self.products[product.product_id] = product
-
+    def add_product(self, product):                     #Adds product to Inventory
+         self.products[product.product_id] = product
+         self.products[product.product_id] = product
+ 
+ 
     def update_stock(self, product_id, quantity):
-        if product_id in self.products:
-            self.products[product_id].quantity_in_stock += quantity
-        else:
-            print("Im sorry, we do not have that here")
-
+    def update_stock(self, product_id, quantity):       #Updates Quantity of Stock
+         if product_id in self.products:
+         if product_id in self.products:
+             self.products[product_id].quantity_in_stock += quantity
+             self.products[product_id].quantity_in_stock += quantity
+         else:
+         else:
+             print("Im sorry, we do not have that here")
+             print("Im sorry, we do not have that here")
+ 
+ 
     def get_product_info(self, product_id):
-        if product_id in self.products:
-            product = self.products[product_id]
-            return f"ID: {product.product_id}, Name: {product.name}, Category: {product.category}, Price: {product.price}, Quantity in Stock: {product.quantity_in_stock}"
-        else:
-            return "Im sorry, we do not have that here."
-
-class Transaction:
-    def __init__(self, transaction_id, products, total_amount):
-        self.transaction_id = transaction_id
+    def get_product_info(self, product_id):              #Retrieves Info about product (product_id, name, category, price, quantity_in_stock)
+         if product_id in self.products:
+         if product_id in self.products:
+             product = self.products[product_id]
+             product = self.products[product_id]
+             return f"ID: {product.product_id}, Name: {product.name}, Category: {product.category}, Price: {product.price}, Quantity in Stock: {product.quantity_in_stock}"
+             return f"ID: {product.product_id}, Name: {product.name}, Category: {product.category}, Price: {product.price}, Quantity in Stock: {product.quantity_in_stock}"
+ @@ -30,10 +33,10 @@ class Inventory:
+ class Transaction:
+ class Transaction:
+     def __init__(self, transaction_id, products, total_amount):
+     def __init__(self, transaction_id, products, total_amount):
+         self.transaction_id = transaction_id
+         self.transaction_id = transaction_id
         self.products = products
+        self.products = products   #Dictonary for products
         self.total_amount = total_amount
-
+        self.total_amount = total_amount    #Dictonary for total quantity of product
+ 
+ 
 class Store:
-    def __init__(self):
-        self.inventory = Inventory()
-        self.transactions = []
-        self.transaction_counter = 1
-
-    def process_transaction(self, products):
-        total_amount = sum(product.price * quantity for product, quantity in products.items())
-        transaction = Transaction(self.transaction_counter, products, total_amount)
-        self.transactions.append(transaction)
-        self.transaction_counter += 1
-        return transaction
-
+class Store:                        #Conatains keys from Transactions and Inventory
+     def __init__(self):
+     def __init__(self):
+         self.inventory = Inventory()
+         self.inventory = Inventory()
+         self.transactions = []
+         self.transactions = []
+ @@ -46,7 +49,7 @@ class Store:
+         self.transaction_counter += 1
+         self.transaction_counter += 1
+         return transaction
+         return transaction
+ 
+ 
 # Sample usage of the classes and CLI
-store = Store()
 
-# Adding products to inventory
-product1 = Product(1, "Water", "Drinks", 1.99, 50)
-product2 = Product(2, "Soda", "Drinks", 3.99, 30)
-product3 = Product(3, "Tea", "Drinks", 2.99, 40)
-product4 = Product(4, "Chips", "Snacks", 2.99, 20)
-product5 = Product(5, "Gummy bears", "Snacks", 3.99, 10)
-store.inventory.add_product(product1)
-store.inventory.add_product(product2)
-store.inventory.add_product(product3)
-store.inventory.add_product(product4)
-store.inventory.add_product(product5)
-
+ store = Store()
+ store = Store()
+ 
+ 
+ # Adding products to inventory
+ # Adding products to inventory
+ @@ -61,21 +64,23 @@ store.inventory.add_product(product3)
+ store.inventory.add_product(product4)
+ store.inventory.add_product(product4)
+ store.inventory.add_product(product5)
+ store.inventory.add_product(product5)
+ 
+ 
 # CLI for interacting with the store
-while True:
+# CLI for interacting with the store page
+ while True:
+ while True:
     print("Hello! What can I do for you today:")
-    print("1. View Product Info")
-    print("2. Process Transaction")
-    print("3. Exit")
-    choice = input("Enter your choice: ")
+    #This boolean provides options (1,2, and 3) that the user is given to select
+    print("\nHello! What can I do for you?")
+     print("1. View Product Info")
+     print("1. View Product Info")
+     print("2. Process Transaction")
+     print("2. Process Transaction")
+     print("3. Exit")
+     print("3. Exit")
+     choice = input("Enter your choice: ")
+     choice = input("Enter your choice: ")
+ 
+ 
+     if choice == "1":
+     if choice == "1":
 
-    if choice == "1":
-
-        product_id = int(input("Enter product ID: "))
-        print(store.inventory.get_product_info(product_id))
-    elif choice == "2":
-        products = {}
-        while True:
-            product_id = int(input("Enter product ID (0 to finish): "))
-            if product_id == 0:
-                break
-            quantity = int(input("Enter quantity: "))
-            products[store.inventory.products[product_id]] = quantity
-        transaction = store.process_transaction(products)
-        print(f"Transaction ID: {transaction.transaction_id}")
-        print(f"Total Amount: {transaction.total_amount}")
-    elif choice == "3":
-        break
-    else:
+        print( "1. Water \n 2. Soda \n 3. Tea \n 4. Chips \n 5. Gummy Bears") #Lists product IDs
+         product_id = int(input("Enter product ID: "))
+         product_id = int(input("Enter product ID: "))
+         print(store.inventory.get_product_info(product_id))
+         print(store.inventory.get_product_info(product_id))
+     elif choice == "2":
+     elif choice == "2":
+         products = {}
+         products = {}
+         while True:
+         while True:
+            print("Sure! What would you like to purchase? \n 1. Water \n 2. Soda \n 3. Tea \n 4. Chips \n 5. Gummy Bears ")
+             product_id = int(input("Enter product ID (0 to finish): "))
+             product_id = int(input("Enter product ID (0 to finish): "))
+             if product_id == 0:
+             if product_id == 0:
+                 break
+                 break
+ @@ -87,4 +92,10 @@ while True:
+     elif choice == "3":
+     elif choice == "3":
+         break
+         break
+     else:
+     else:
         print("Sorry, Im not sure what you are looking for")
+        print("Sorry, Im not sure what you are looking for") #Ivalid option was picked by the user (choice != 1,2, or 3)
+
+
+
+
+
+
+
+
+
+
+
+
